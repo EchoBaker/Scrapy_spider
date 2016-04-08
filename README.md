@@ -25,3 +25,4 @@ The example code make a structured data form like this:
 
 ## 3. Create your Spiders
 Define the spiders' behavious to extract the data you wanted.
+A example to scrape all the link of images in XKCD.com
