@@ -13,3 +13,5 @@ class XkcdItem(scrapy.Item):
     # name = scrapy.Field()
     name = scrapy.Field()
     link = scrapy.Field()
+    desc = scrapy.Field()
+    file_paths = scrapy.Field()
