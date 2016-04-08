@@ -24,4 +24,4 @@ The example code make a structured data form like this:
 <center><table><tr><td>**name**</td><td>**owner**</td><td>**price**</td></tr><tr><td>Coffee</td><td>John</td><td>$ 10</td></tr><tr><td>...</td><td>...</td><td>...</td></tr></table></center>
 
 ## 3. Create your Spiders
-Define the spiders' behavious to extract the data you wanted."
+Define the spiders' behavious to extract the data you wanted.
