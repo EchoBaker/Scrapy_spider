@@ -19,6 +19,7 @@ class XkcdSpider(scrapy.Spider):
         # Code Here to instantiate item
         item = XkcdItem()
         item['name'] = response.css('div#comic > img::attr("alt")').extract()
+        item['file_urls'] = [response.url]
         # alt attribute of img tags
         item['image_urls'] = ["http:" + response.css('div#comic > img::attr("src")').extract()[0]]
         # src(url) attribute of the img tags
@@ -26,4 +27,4 @@ class XkcdSpider(scrapy.Spider):
         # description of images
 
         yield item
-        # indispensable sentence to yield or return item object to pipelines
+        # indispensable sentence to yield (less memory used) or return item object to pipelines

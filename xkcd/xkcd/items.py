@@ -12,6 +12,6 @@ class XkcdItem(scrapy.Item):
 
     # define the fields for your item here like:
     name = scrapy.Field()
+    file_urls = scrapy.Field()
     image_urls = scrapy.Field()
     desc = scrapy.Field()
-    file_paths = scrapy.Field()

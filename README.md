@@ -72,7 +72,8 @@ class XkcdSpider(scrapy.Spider):
 
         yield item
 ```
-Well Done! we 've had a spider to work for us for get wanted item filled with scraped data.
+
+Well Done! we 've had a spider to work for us for get wanted item filled with scraped data. First Header | Second Header  ------------ | ------- Content from cell 1 | Content from cell 2 Content in the first column | Content in the second column
 
 ## 4. Customize File Pipelines to Stroe Data
 ## 5. Configure Setting of Project
