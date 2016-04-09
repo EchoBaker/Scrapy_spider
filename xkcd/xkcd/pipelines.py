@@ -4,21 +4,24 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
-import hashlib
-from scrapy.conf import settings
-from scrapy.http import Request
-import psycopg2
+
 from cStringIO import StringIO
-import scrapy
+from scrapy import log
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy.exceptions import DropItem
 
 
-class XkcdPipelinee(ImagesPipeline):
+class XkcdPipelinee(object):
+
+    def process_item(self, item, spider):
+        return item
+
+
+class XkcdImgDownloadPipeline(ImagesPipeline):
 
     def get_media_requests(self, item, info):
-        for image_url in item['link']:
-            return scrapy.Request(image_url)
+        for image_url in item['image_urls']:
+            yield scrapy.Request(image_url)
 
     def item_completed(self, results, item, info):
         image_paths = [x['path'] for ok, x in results if ok]
