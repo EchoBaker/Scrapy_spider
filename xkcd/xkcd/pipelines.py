@@ -35,7 +35,7 @@ class HtmlPipeline(FilesPipeline):
 
     def file_path(self, request, response=None, info=None):
         if re.search(r'\d', request.url):
-            media_guid = re.search(r'\d', request.url).group(1)
+            media_guid = re.search(r'\d+', request.url).group()
         else:
             media_guid = '0'
         return 'web/%s.html' % (media_guid)

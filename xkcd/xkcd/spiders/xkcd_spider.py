@@ -12,7 +12,10 @@ from scrapy.http import Request  # Requset class to get Request object of a URL
 class XkcdSpider(scrapy.Spider):
     name = 'xkcd'
     allowed_domains = ["xkcd.com/"]  # only urls in this domains can be requested
-    start_urls = ["http://xkcd.com"] + ["http://xkcd.com/%d/" % num for num in xrange(1, 4)]
+
+    def __init__(self, end=6, *args, **kwargs):
+        super(XkcdSpider, self).__init__(*args, **kwargs)
+        self.start_urls = ["http://xkcd.com"] + ["http://xkcd.com/%s/" % num for num in xrange(1, int(end))]
 
     def parse(self, response):  # the method utilized to parse the response of an url requset
 
