@@ -72,3 +72,7 @@ class XkcdSpider(scrapy.Spider):
 
         yield item
 ```
+Well Done! we 've had a spider to work for us for get wanted item filled with scraped data.
+
+## 4. Customize File Pipelines to Stroe Data
+## 5. Configure Setting of Project
