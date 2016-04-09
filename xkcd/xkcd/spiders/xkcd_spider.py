@@ -46,11 +46,3 @@ class XkcdSpider(scrapy.Spider, Request, Response):
         item = response.request.meta['item']
         # add all images url's in item['image_urls']
         yield item
-
-        # yield item
-        # f = open('item.json', 'ab')
-        # # print(item['name'][0])
-        # line = ",".join([i[0]for i in item.values()])
-        # f.write(line)
-        # t = Request(url, callback=self.parse_extract_item)
-        # print t  # yield Response(url, callback=self.parse)
