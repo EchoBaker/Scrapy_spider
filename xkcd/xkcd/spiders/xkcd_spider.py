@@ -28,15 +28,24 @@ class XkcdSpider(scrapy.Spider, Request, Response):
 
         item = XkcdItem()
         item['name'] = response.css('div#comic > img::attr("alt")').extract()
-        item['link'] = "http:" + response.css('div#comic > img::attr("src")').extract()[0]
+        item['link'] = ["http:" + response.css('div#comic > img::attr("src")').extract()[0]]
         item['desc'] = response.css('div#comic > img::attr("title")').extract()
+        # print item['link'][0]
+        # res = requests.get(item['link'])
+        # imageFile = open(os.path.join('.\\images', item['name'][0] + '.jpg'), 'wb')
+        # for chunk in res.iter_content(100000):
+        #     imageFile.write(chunk)
+        # # imageFile.close()
         print item['link']
-        res = requests.get(item['link'])
-        imageFile = open(os.path.join('.\\images', item['name'][0] + '.jpg'), 'wb')
-        for chunk in res.iter_content(100000):
-            imageFile.write(chunk)
-        imageFile.close()
-        return item
+        yield Request(item['link'][0],
+                      meta={'item': item},
+                      callback=self.product_detail_page)
+
+    def product_detail_page(self, response):
+        # hxs=HtmlXpathSelector(response)
+        item = response.request.meta['item']
+        # add all images url's in item['image_urls']
+        yield item
 
         # yield item
         # f = open('item.json', 'ab')

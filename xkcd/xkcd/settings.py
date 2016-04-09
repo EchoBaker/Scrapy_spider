@@ -65,7 +65,7 @@ NEWSPIDER_MODULE = 'xkcd.spiders'
 #    'xkcd.pipelines.SomePipeline': 300,
 #}
 ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
-IMAGES_STORE = './images'
+IMAGES_STORE = 'C:/Users/Echo/Documents/GitHub/Scrapy_spider/xkcd/images'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 # NOTE: AutoThrottle will honour the standard settings for concurrency and delay
