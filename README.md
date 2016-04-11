@@ -52,17 +52,17 @@ Define the spiders' behavious to extract the data you wanted. A example to scrap
 ```
 import os
 import scrapy
-from xkcd.items import XkcdItem  
+from xkcd.items import XkcdItem
 from scrapy.spiders import Spider
-from scrapy.http import Request  
+from scrapy.http import Request
 
 
 class XkcdSpider(scrapy.Spider):
     name = 'xkcd'
-    allowed_domains = ["xkcd.com/"]  
+    allowed_domains = ["xkcd.com/"]
     start_urls = ["http://xkcd.com"] + ["http://xkcd.com/%d/" % num for num in xrange(1, 4)]
 
-    def parse(self, response):  
+    def parse(self, response):
 
         # Code Here to instantiate item
         item = XkcdItem()
@@ -73,7 +73,44 @@ class XkcdSpider(scrapy.Spider):
         yield item
 ```
 
-Well Done! we 've had a spider to work for us for get wanted item filled with scraped data. First Header | Second Header  ------------ | ------- Content from cell 1 | Content from cell 2 Content in the first column | Content in the second column
+Well Done! we 've had a spider to work for us for get wanted item filled with scraped data.
 
 ## 4. Customize File Pipelines to Stroe Data
+* #### FilesPipeline
+```
+def file_path(self, request, response=None, info=None):
+      if re.search(r'\d', request.url):
+          media_guid = re.search(r'\d+', request.url).group()
+      else:
+          media_guid = '0'
+      return 'web/%s.html' % (media_guid)
+```
+* #### ImagesPipeline
+```
+from scrapy.pipelines.images import ImagesPipeline
+from scrapy.exceptions import DropItem
+
+
+class XkcdImgPipeline(ImagesPipeline):
+    def file_path(self, request, response=None, info=None,):
+        image_guid = request.url.split('/')[-1]
+        return 'images/%s' % (image_guid)
+
+    def get_media_requests(self, item, info):
+        for image_url in item['image_urls']:
+            yield scrapy.Request(image_url)
+
+    def item_completed(self, results, item, info):
+        image_paths = [x['path'] for ok, x in results if ok]
+        if not image_paths:
+            raise DropItem("Item contains no images")
+        item['image_paths'] = image_paths
+        yield item
+  ```
+
 ## 5. Configure Setting of Project
+:sunglasses:
+
+`$ scrapy crawl xkcd --logfile="xkcd_log.log" -o xkcd.json -t json`
+
+`$ scrapy crawl xkcd -a end=10`
