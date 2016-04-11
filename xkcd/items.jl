@@ -1,10 +1,6 @@
 {"file_urls": ["http://xkcd.com"], "name": ["City Talk Pages"], "image_urls": ["http://imgs.xkcd.com/comics/city_talk_pages.png"], "desc": ["I don't think the Lakeshore Air Crash Museum really belongs under 'Tourist Attractions.' It's not a museum--it's just an area near the Lake Festival Laser Show where a lot of planes have crashed."]}
-{"file_urls": ["http://xkcd.com/7/"], "name": ["Girl sleeping (Sketch -- 11th grade Spanish class)"], "image_urls": ["http://imgs.xkcd.com/comics/girl_sleeping_noline_(1).jpg"], "desc": ["I don't remember her name at all, but she fell asleep on the floor in front of me."]}
-{"file_urls": ["http://xkcd.com/2/"], "name": ["Petit Trees (sketch)"], "image_urls": ["http://imgs.xkcd.com/comics/tree_cropped_(1).jpg"], "desc": ["'Petit' being a reference to Le Petit Prince, which I only thought about halfway through the sketch"]}
+{"file_urls": ["http://xkcd.com/3/"], "name": ["Island (sketch)"], "image_urls": ["http://imgs.xkcd.com/comics/island_color.jpg"], "desc": ["Hello, island"]}
 {"file_urls": ["http://xkcd.com/1/"], "name": ["Barrel - Part 1"], "image_urls": ["http://imgs.xkcd.com/comics/barrel_cropped_(1).jpg"], "desc": ["Don't we all."]}
 {"file_urls": ["http://xkcd.com/5/"], "name": ["Blown apart"], "image_urls": ["http://imgs.xkcd.com/comics/blownapart_color.jpg"], "desc": ["Blown into prime factors"]}
-{"file_urls": ["http://xkcd.com/3/"], "name": ["Island (sketch)"], "image_urls": ["http://imgs.xkcd.com/comics/island_color.jpg"], "desc": ["Hello, island"]}
+{"file_urls": ["http://xkcd.com/2/"], "name": ["Petit Trees (sketch)"], "image_urls": ["http://imgs.xkcd.com/comics/tree_cropped_(1).jpg"], "desc": ["'Petit' being a reference to Le Petit Prince, which I only thought about halfway through the sketch"]}
 {"file_urls": ["http://xkcd.com/4/"], "name": ["Landscape (sketch)"], "image_urls": ["http://imgs.xkcd.com/comics/landscape_cropped_(1).jpg"], "desc": ["There's a river flowing through the ocean"]}
-{"file_urls": ["http://xkcd.com/9/"], "name": ["Serenity is coming out tomorrow"], "image_urls": ["http://imgs.xkcd.com/comics/firefly.jpg"], "desc": ["Mal, Simon, Wash, Zoe, River, Kaylee, Jayne, Inara, Book."]}
-{"file_urls": ["http://xkcd.com/6/"], "name": ["Irony"], "image_urls": ["http://imgs.xkcd.com/comics/irony_color.jpg"], "desc": ["It's commonly known that too much perspective can be a downer."]}
-{"file_urls": ["http://xkcd.com/8/"], "name": ["Red spiders"], "image_urls": ["http://imgs.xkcd.com/comics/red_spiders_small.jpg"], "desc": ["They are six-legged spiders"]}
