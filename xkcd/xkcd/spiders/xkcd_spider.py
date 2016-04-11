@@ -1,5 +1,4 @@
 
-import os
 import scrapy
 from xkcd.items import XkcdItem  # XkcdItem class in xkcd/xkcd/items.py
 from scrapy.spiders import Spider  # the most basic Spider class
