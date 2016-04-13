@@ -13,6 +13,3 @@ class JsonWithEncodingPipeline(object):
         line = json.dumps(OrderedDict(item), ensure_ascii=False, sort_keys=False) + "\n"
         self.file.write(line)
         return item
-
-    def spider_closed(self, spider):
-        self.file.close()

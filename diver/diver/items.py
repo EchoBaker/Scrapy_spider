@@ -7,11 +7,7 @@
 from scrapy import Item, Field
 
 
-# class DiverItem(scrapy.Item):
-# define the fields for your item here like:
-# name = scrapy.Field()
-
-class DoubanSubjectItem(Item):
+class DoubanBookItem(Item):
     title = Field()
     link = Field()
     info = Field()
